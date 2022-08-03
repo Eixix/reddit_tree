@@ -1,6 +1,4 @@
-import scrapy
-from scrapy.spiders import CrawlSpider
-from scrapy.spiders import Rule
+from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 
 class redditSpider(CrawlSpider):
@@ -11,18 +9,23 @@ class redditSpider(CrawlSpider):
     ]
 
     rules = (
-        Rule(LinkExtractor(restrict_text=r"^r\/\S+$"), follow=True),
+        Rule(LinkExtractor(restrict_text=r"^r\/\S+$"), follow=False),
     )
 
-    def parse(self, response):
-        links = LinkExtractor(restrict_text=r"^r\/\S+$").extract_links(response)
+    def parse_item(self, response):
+        yield {
+            'name': "Test",
+            'item': response.url
+        }
+        # links = LinkExtractor(restrict_text=r"^r\/\S+$").extract_links(response)
 
+        # scrapes = []
+        # for link in links:
+        #     item = {}
+        #     item['name'] = link
+        #     item['parent'] = response.url
+        #     scrapes.append(item)
 
-        self.log("WHAT HAPPENED??")
-        for link in links:
-            item = scrapy.Item()
-            item['name'] = link
-            item['parent'] = response.url
-            yield item
+        # return scrapes
 
         
