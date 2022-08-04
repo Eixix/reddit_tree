@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/graphology-library@0.7.1/dist/graphology-library.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sigma-js@1.1.5/dist/sigma.min.js"></script>
+</head>
+
+<body>
+  <div id="container" style="width: 100%; height: 100%"></div>
+</body>
+<script>
+  const data = {
+    "nodes": [
+      {
+        "id": "https://www.reddit.com/r/de_EDV/",
+        "label": "https://www.reddit.com/r/de_EDV/",
+        "x": 7,
+        "y": 5,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/Eltern/",
+        "label": "https://www.reddit.com/r/Eltern/",
+        "x": 1,
+        "y": 3,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/Handarbeiten/",
+        "label": "https://www.reddit.com/r/Handarbeiten/",
+        "x": 2,
+        "y": 6,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/Studium/",
+        "label": "https://www.reddit.com/r/Studium/",
+        "x": 8,
+        "y": 9,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/VeganDE/",
+        "label": "https://www.reddit.com/r/VeganDE/",
+        "x": 4,
+        "y": 3,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/zocken/",
+        "label": "https://www.reddit.com/r/zocken/",
+        "x": 5,
+        "y": 1,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/Garten/",
+        "label": "https://www.reddit.com/r/Garten/",
+        "x": 6,
+        "y": 6,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/arbeitsleben/",
+        "label": "https://www.reddit.com/r/arbeitsleben/",
+        "x": 0,
+        "y": 2,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/freifunk/",
+        "label": "https://www.reddit.com/r/freifunk/",
+        "x": 4,
+        "y": 8,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/egenbogen/",
+        "label": "https://www.reddit.com/r/egenbogen/",
+        "x": 0,
+        "y": 9,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/informatik/",
+        "label": "https://www.reddit.com/r/informatik/",
+        "x": 4,
+        "y": 3,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/Kochen/",
+        "label": "https://www.reddit.com/r/Kochen/",
+        "x": 1,
+        "y": 1,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/FragReddit/",
+        "label": "https://www.reddit.com/r/FragReddit/",
+        "x": 2,
+        "y": 6,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/homelab/",
+        "label": "https://www.reddit.com/r/homelab/",
+        "x": 4,
+        "y": 5,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/PickAnAndroidForMe/",
+        "label": "https://www.reddit.com/r/PickAnAndroidForMe/",
+        "x": 4,
+        "y": 9,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/techsupport/",
+        "label": "https://www.reddit.com/r/techsupport/",
+        "x": 1,
+        "y": 5,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/talesfromtechsupport/",
+        "label": "https://www.reddit.com/r/talesfromtechsupport/",
+        "x": 7,
+        "y": 7,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/sysadmin/",
+        "label": "https://www.reddit.com/r/sysadmin/",
+        "x": 3,
+        "y": 1,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/buildapc/",
+        "label": "https://www.reddit.com/r/buildapc/",
+        "x": 4,
+        "y": 4,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/crochet_espanol/",
+        "label": "https://www.reddit.com/r/crochet_espanol/",
+        "x": 6,
+        "y": 7,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/MechanicalKeyboards/",
+        "label": "https://www.reddit.com/r/MechanicalKeyboards/",
+        "x": 0,
+        "y": 1,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/VeganAT/",
+        "label": "https://www.reddit.com/r/VeganAT/",
+        "x": 0,
+        "y": 9,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/geschlechtsneutral/",
+        "label": "https://www.reddit.com/r/geschlechtsneutral/",
+        "x": 1,
+        "y": 6,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/Fernstudis/",
+        "label": "https://www.reddit.com/r/Fernstudis/",
+        "x": 0,
+        "y": 6,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/LegaladviceGerman/",
+        "label": "https://www.reddit.com/r/LegaladviceGerman/",
+        "x": 4,
+        "y": 1,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/doener/",
+        "label": "https://www.reddit.com/r/doener/",
+        "x": 8,
+        "y": 4,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/traa_de/",
+        "label": "https://www.reddit.com/r/traa_de/",
+        "x": 2,
+        "y": 0,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/Angelfreunde/",
+        "label": "https://www.reddit.com/r/Angelfreunde/",
+        "x": 8,
+        "y": 0,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/EuropeEats/",
+        "label": "https://www.reddit.com/r/EuropeEats/",
+        "x": 9,
+        "y": 6,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/homeautomation/",
+        "label": "https://www.reddit.com/r/homeautomation/",
+        "x": 5,
+        "y": 1,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/linuxadmin/",
+        "label": "https://www.reddit.com/r/linuxadmin/",
+        "x": 5,
+        "y": 3,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/HomeNetworking/",
+        "label": "https://www.reddit.com/r/HomeNetworking/",
+        "x": 7,
+        "y": 4,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/buildapcsales/",
+        "label": "https://www.reddit.com/r/buildapcsales/",
+        "x": 7,
+        "y": 7,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/ZeroWasteVegans/",
+        "label": "https://www.reddit.com/r/ZeroWasteVegans/",
+        "x": 8,
+        "y": 7,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/PFSENSE/",
+        "label": "https://www.reddit.com/r/PFSENSE/",
+        "x": 3,
+        "y": 5,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/MouseReview/",
+        "label": "https://www.reddit.com/r/MouseReview/",
+        "x": 6,
+        "y": 8,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/Iberofonia/",
+        "label": "https://www.reddit.com/r/Iberofonia/",
+        "x": 0,
+        "y": 3,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/hardwareswap/",
+        "label": "https://www.reddit.com/r/hardwareswap/",
+        "x": 6,
+        "y": 9,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/abitur/",
+        "label": "https://www.reddit.com/r/abitur/",
+        "x": 9,
+        "y": 7,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/Fernstudis/?f=flair_name%3A%22r%2FFernstudis%22",
+        "label": "https://www.reddit.com/r/Fernstudis/?f=flair_name%3A%22r%2FFernstudis%22",
+        "x": 3,
+        "y": 3,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/VeganBaking/",
+        "label": "https://www.reddit.com/r/VeganBaking/",
+        "x": 7,
+        "y": 3,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/alarmdotcom/",
+        "label": "https://www.reddit.com/r/alarmdotcom/",
+        "x": 4,
+        "y": 4,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/olkb/",
+        "label": "https://www.reddit.com/r/olkb/",
+        "x": 9,
+        "y": 9,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/CustomKeyboards/",
+        "label": "https://www.reddit.com/r/CustomKeyboards/",
+        "x": 4,
+        "y": 5,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/veganrecipes/",
+        "label": "https://www.reddit.com/r/veganrecipes/",
+        "x": 6,
+        "y": 8,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/TpLink/",
+        "label": "https://www.reddit.com/r/TpLink/",
+        "x": 7,
+        "y": 6,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/keycaps/",
+        "label": "https://www.reddit.com/r/keycaps/",
+        "x": 8,
+        "y": 8,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/smarthome/",
+        "label": "https://www.reddit.com/r/smarthome/",
+        "x": 9,
+        "y": 6,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/googlehome/",
+        "label": "https://www.reddit.com/r/googlehome/",
+        "x": 4,
+        "y": 4,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/DIY/",
+        "label": "https://www.reddit.com/r/DIY/",
+        "x": 9,
+        "y": 3,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/msp/",
+        "label": "https://www.reddit.com/r/msp/",
+        "x": 2,
+        "y": 7,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/CPTSD/",
+        "label": "https://www.reddit.com/r/CPTSD/",
+        "x": 0,
+        "y": 5,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/Netgate/",
+        "label": "https://www.reddit.com/r/Netgate/",
+        "x": 6,
+        "y": 0,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/LatinAmerica/",
+        "label": "https://www.reddit.com/r/LatinAmerica/",
+        "x": 4,
+        "y": 1,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/keycapdesigners/",
+        "label": "https://www.reddit.com/r/keycapdesigners/",
+        "x": 6,
+        "y": 9,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/CanadianHardwareSwap/",
+        "label": "https://www.reddit.com/r/CanadianHardwareSwap/",
+        "x": 6,
+        "y": 4,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/amazonecho/",
+        "label": "https://www.reddit.com/r/amazonecho/",
+        "x": 1,
+        "y": 1,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/HardwareSwapEU/",
+        "label": "https://www.reddit.com/r/HardwareSwapEU/",
+        "x": 4,
+        "y": 3,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/Ring/",
+        "label": "https://www.reddit.com/r/Ring/",
+        "x": 5,
+        "y": 7,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/VivintSmartHome/",
+        "label": "https://www.reddit.com/r/VivintSmartHome/",
+        "x": 6,
+        "y": 9,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/VeganActivism/",
+        "label": "https://www.reddit.com/r/VeganActivism/",
+        "x": 1,
+        "y": 1,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/Nest/",
+        "label": "https://www.reddit.com/r/Nest/",
+        "x": 8,
+        "y": 7,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/diysecurity/",
+        "label": "https://www.reddit.com/r/diysecurity/",
+        "x": 5,
+        "y": 6,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/pcmasterrace/",
+        "label": "https://www.reddit.com/r/pcmasterrace/",
+        "x": 2,
+        "y": 1,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/InternalFamilySystems/",
+        "label": "https://www.reddit.com/r/InternalFamilySystems/",
+        "x": 9,
+        "y": 9,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/homesecurity/",
+        "label": "https://www.reddit.com/r/homesecurity/",
+        "x": 8,
+        "y": 1,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/fixit/",
+        "label": "https://www.reddit.com/r/fixit/",
+        "x": 8,
+        "y": 3,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/SuicideWatch/",
+        "label": "https://www.reddit.com/r/SuicideWatch/",
+        "x": 3,
+        "y": 4,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/simplisafe/",
+        "label": "https://www.reddit.com/r/simplisafe/",
+        "x": 2,
+        "y": 5,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/PanAmerica/",
+        "label": "https://www.reddit.com/r/PanAmerica/",
+        "x": 7,
+        "y": 7,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/Desahogo/",
+        "label": "https://www.reddit.com/r/Desahogo/",
+        "x": 7,
+        "y": 8,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/winkhub/",
+        "label": "https://www.reddit.com/r/winkhub/",
+        "x": 3,
+        "y": 6,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/SmartThings/",
+        "label": "https://www.reddit.com/r/SmartThings/",
+        "x": 7,
+        "y": 8,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/ifttt/",
+        "label": "https://www.reddit.com/r/ifttt/",
+        "x": 0,
+        "y": 4,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/ErgoMechKeyboards/",
+        "label": "https://www.reddit.com/r/ErgoMechKeyboards/",
+        "x": 1,
+        "y": 9,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/DankLatAm/",
+        "label": "https://www.reddit.com/r/DankLatAm/",
+        "x": 3,
+        "y": 0,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/finishing/",
+        "label": "https://www.reddit.com/r/finishing/",
+        "x": 6,
+        "y": 6,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/melomanos/",
+        "label": "https://www.reddit.com/r/melomanos/",
+        "x": 9,
+        "y": 5,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/AmazonEchoDev/",
+        "label": "https://www.reddit.com/r/AmazonEchoDev/",
+        "x": 7,
+        "y": 0,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/rapecounseling/",
+        "label": "https://www.reddit.com/r/rapecounseling/",
+        "x": 2,
+        "y": 7,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/asklatinamerica/",
+        "label": "https://www.reddit.com/r/asklatinamerica/",
+        "x": 2,
+        "y": 2,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/centralamerica/",
+        "label": "https://www.reddit.com/r/centralamerica/",
+        "x": 0,
+        "y": 1,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/Alexa_Skills/",
+        "label": "https://www.reddit.com/r/Alexa_Skills/",
+        "x": 6,
+        "y": 3,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/saintmaarten/",
+        "label": "https://www.reddit.com/r/saintmaarten/",
+        "x": 4,
+        "y": 1,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/AskTheCaribbean/",
+        "label": "https://www.reddit.com/r/AskTheCaribbean/",
+        "x": 7,
+        "y": 5,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/brasilivre/",
+        "label": "https://www.reddit.com/r/brasilivre/",
+        "x": 5,
+        "y": 3,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/emotionalneglect/",
+        "label": "https://www.reddit.com/r/emotionalneglect/",
+        "x": 6,
+        "y": 1,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/notArgentina/",
+        "label": "https://www.reddit.com/r/notArgentina/",
+        "x": 1,
+        "y": 9,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/Argaming/",
+        "label": "https://www.reddit.com/r/Argaming/",
+        "x": 4,
+        "y": 2,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/RepArgentina/",
+        "label": "https://www.reddit.com/r/RepArgentina/",
+        "x": 0,
+        "y": 6,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/UBA/",
+        "label": "https://www.reddit.com/r/UBA/",
+        "x": 0,
+        "y": 5,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/Guadeloupe/",
+        "label": "https://www.reddit.com/r/Guadeloupe/",
+        "x": 4,
+        "y": 3,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/empleos_AR/",
+        "label": "https://www.reddit.com/r/empleos_AR/",
+        "x": 9,
+        "y": 7,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/AlexaDevs/",
+        "label": "https://www.reddit.com/r/AlexaDevs/",
+        "x": 9,
+        "y": 4,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/dankgentina/",
+        "label": "https://www.reddit.com/r/dankgentina/",
+        "x": 7,
+        "y": 2,
+        "size": 5
+      },
+      {
+        "id": "https://www.reddit.com/r/memexico/",
+        "label": "https://www.reddit.com/r/memexico/",
+        "x": 2,
+        "y": 4,
+        "size": 5
+      }
+    ],
+    "edges": [
+      {
+        "id": 0,
+        "source": "https://www.reddit.com/r/de_EDV/",
+        "target": "name"
+      },
+      {
+        "id": 1,
+        "source": "https://www.reddit.com/r/de_EDV/",
+        "target": "parent"
+      },
+      {
+        "id": 2,
+        "source": "https://www.reddit.com/r/de_EDV/",
+        "target": "children"
+      },
+      {
+        "id": 3,
+        "source": "https://www.reddit.com/r/Eltern/",
+        "target": "name"
+      },
+      {
+        "id": 4,
+        "source": "https://www.reddit.com/r/Eltern/",
+        "target": "parent"
+      },
+      {
+        "id": 5,
+        "source": "https://www.reddit.com/r/Eltern/",
+        "target": "children"
+      },
+      {
+        "id": 6,
+        "source": "https://www.reddit.com/r/Handarbeiten/",
+        "target": "name"
+      },
+      {
+        "id": 7,
+        "source": "https://www.reddit.com/r/Handarbeiten/",
+        "target": "parent"
+      },
+      {
+        "id": 8,
+        "source": "https://www.reddit.com/r/Handarbeiten/",
+        "target": "children"
+      },
+      {
+        "id": 9,
+        "source": "https://www.reddit.com/r/Studium/",
+        "target": "name"
+      },
+      {
+        "id": 10,
+        "source": "https://www.reddit.com/r/Studium/",
+        "target": "parent"
+      },
+      {
+        "id": 11,
+        "source": "https://www.reddit.com/r/Studium/",
+        "target": "children"
+      },
+      {
+        "id": 12,
+        "source": "https://www.reddit.com/r/VeganDE/",
+        "target": "name"
+      },
+      {
+        "id": 13,
+        "source": "https://www.reddit.com/r/VeganDE/",
+        "target": "parent"
+      },
+      {
+        "id": 14,
+        "source": "https://www.reddit.com/r/VeganDE/",
+        "target": "children"
+      },
+      {
+        "id": 15,
+        "source": "https://www.reddit.com/r/zocken/",
+        "target": "name"
+      },
+      {
+        "id": 16,
+        "source": "https://www.reddit.com/r/zocken/",
+        "target": "parent"
+      },
+      {
+        "id": 17,
+        "source": "https://www.reddit.com/r/zocken/",
+        "target": "children"
+      },
+      {
+        "id": 18,
+        "source": "https://www.reddit.com/r/Garten/",
+        "target": "name"
+      },
+      {
+        "id": 19,
+        "source": "https://www.reddit.com/r/Garten/",
+        "target": "parent"
+      },
+      {
+        "id": 20,
+        "source": "https://www.reddit.com/r/Garten/",
+        "target": "children"
+      },
+      {
+        "id": 21,
+        "source": "https://www.reddit.com/r/arbeitsleben/",
+        "target": "name"
+      },
+      {
+        "id": 22,
+        "source": "https://www.reddit.com/r/arbeitsleben/",
+        "target": "parent"
+      },
+      {
+        "id": 23,
+        "source": "https://www.reddit.com/r/arbeitsleben/",
+        "target": "children"
+      },
+      {
+        "id": 24,
+        "source": "https://www.reddit.com/r/freifunk/",
+        "target": "name"
+      },
+      {
+        "id": 25,
+        "source": "https://www.reddit.com/r/freifunk/",
+        "target": "parent"
+      },
+      {
+        "id": 26,
+        "source": "https://www.reddit.com/r/freifunk/",
+        "target": "children"
+      },
+      {
+        "id": 27,
+        "source": "https://www.reddit.com/r/egenbogen/",
+        "target": "name"
+      },
+      {
+        "id": 28,
+        "source": "https://www.reddit.com/r/egenbogen/",
+        "target": "parent"
+      },
+      {
+        "id": 29,
+        "source": "https://www.reddit.com/r/egenbogen/",
+        "target": "children"
+      },
+      {
+        "id": 30,
+        "source": "https://www.reddit.com/r/informatik/",
+        "target": "name"
+      },
+      {
+        "id": 31,
+        "source": "https://www.reddit.com/r/informatik/",
+        "target": "parent"
+      },
+      {
+        "id": 32,
+        "source": "https://www.reddit.com/r/informatik/",
+        "target": "children"
+      },
+      {
+        "id": 33,
+        "source": "https://www.reddit.com/r/Kochen/",
+        "target": "name"
+      },
+      {
+        "id": 34,
+        "source": "https://www.reddit.com/r/Kochen/",
+        "target": "parent"
+      },
+      {
+        "id": 35,
+        "source": "https://www.reddit.com/r/Kochen/",
+        "target": "children"
+      },
+      {
+        "id": 36,
+        "source": "https://www.reddit.com/r/FragReddit/",
+        "target": "name"
+      },
+      {
+        "id": 37,
+        "source": "https://www.reddit.com/r/FragReddit/",
+        "target": "parent"
+      },
+      {
+        "id": 38,
+        "source": "https://www.reddit.com/r/FragReddit/",
+        "target": "children"
+      },
+      {
+        "id": 39,
+        "source": "https://www.reddit.com/r/homelab/",
+        "target": "name"
+      },
+      {
+        "id": 40,
+        "source": "https://www.reddit.com/r/homelab/",
+        "target": "parent"
+      },
+      {
+        "id": 41,
+        "source": "https://www.reddit.com/r/homelab/",
+        "target": "children"
+      },
+      {
+        "id": 42,
+        "source": "https://www.reddit.com/r/PickAnAndroidForMe/",
+        "target": "name"
+      },
+      {
+        "id": 43,
+        "source": "https://www.reddit.com/r/PickAnAndroidForMe/",
+        "target": "parent"
+      },
+      {
+        "id": 44,
+        "source": "https://www.reddit.com/r/PickAnAndroidForMe/",
+        "target": "children"
+      },
+      {
+        "id": 45,
+        "source": "https://www.reddit.com/r/techsupport/",
+        "target": "name"
+      },
+      {
+        "id": 46,
+        "source": "https://www.reddit.com/r/techsupport/",
+        "target": "parent"
+      },
+      {
+        "id": 47,
+        "source": "https://www.reddit.com/r/techsupport/",
+        "target": "children"
+      },
+      {
+        "id": 48,
+        "source": "https://www.reddit.com/r/talesfromtechsupport/",
+        "target": "name"
+      },
+      {
+        "id": 49,
+        "source": "https://www.reddit.com/r/talesfromtechsupport/",
+        "target": "parent"
+      },
+      {
+        "id": 50,
+        "source": "https://www.reddit.com/r/talesfromtechsupport/",
+        "target": "children"
+      },
+      {
+        "id": 51,
+        "source": "https://www.reddit.com/r/sysadmin/",
+        "target": "name"
+      },
+      {
+        "id": 52,
+        "source": "https://www.reddit.com/r/sysadmin/",
+        "target": "parent"
+      },
+      {
+        "id": 53,
+        "source": "https://www.reddit.com/r/sysadmin/",
+        "target": "children"
+      },
+      {
+        "id": 54,
+        "source": "https://www.reddit.com/r/buildapc/",
+        "target": "name"
+      },
+      {
+        "id": 55,
+        "source": "https://www.reddit.com/r/buildapc/",
+        "target": "parent"
+      },
+      {
+        "id": 56,
+        "source": "https://www.reddit.com/r/buildapc/",
+        "target": "children"
+      },
+      {
+        "id": 57,
+        "source": "https://www.reddit.com/r/crochet_espanol/",
+        "target": "name"
+      },
+      {
+        "id": 58,
+        "source": "https://www.reddit.com/r/crochet_espanol/",
+        "target": "parent"
+      },
+      {
+        "id": 59,
+        "source": "https://www.reddit.com/r/crochet_espanol/",
+        "target": "children"
+      },
+      {
+        "id": 60,
+        "source": "https://www.reddit.com/r/MechanicalKeyboards/",
+        "target": "name"
+      },
+      {
+        "id": 61,
+        "source": "https://www.reddit.com/r/MechanicalKeyboards/",
+        "target": "parent"
+      },
+      {
+        "id": 62,
+        "source": "https://www.reddit.com/r/MechanicalKeyboards/",
+        "target": "children"
+      },
+      {
+        "id": 63,
+        "source": "https://www.reddit.com/r/VeganAT/",
+        "target": "name"
+      },
+      {
+        "id": 64,
+        "source": "https://www.reddit.com/r/VeganAT/",
+        "target": "parent"
+      },
+      {
+        "id": 65,
+        "source": "https://www.reddit.com/r/VeganAT/",
+        "target": "children"
+      },
+      {
+        "id": 66,
+        "source": "https://www.reddit.com/r/geschlechtsneutral/",
+        "target": "name"
+      },
+      {
+        "id": 67,
+        "source": "https://www.reddit.com/r/geschlechtsneutral/",
+        "target": "parent"
+      },
+      {
+        "id": 68,
+        "source": "https://www.reddit.com/r/geschlechtsneutral/",
+        "target": "children"
+      },
+      {
+        "id": 69,
+        "source": "https://www.reddit.com/r/Fernstudis/",
+        "target": "name"
+      },
+      {
+        "id": 70,
+        "source": "https://www.reddit.com/r/Fernstudis/",
+        "target": "parent"
+      },
+      {
+        "id": 71,
+        "source": "https://www.reddit.com/r/Fernstudis/",
+        "target": "children"
+      },
+      {
+        "id": 72,
+        "source": "https://www.reddit.com/r/LegaladviceGerman/",
+        "target": "name"
+      },
+      {
+        "id": 73,
+        "source": "https://www.reddit.com/r/LegaladviceGerman/",
+        "target": "parent"
+      },
+      {
+        "id": 74,
+        "source": "https://www.reddit.com/r/LegaladviceGerman/",
+        "target": "children"
+      },
+      {
+        "id": 75,
+        "source": "https://www.reddit.com/r/doener/",
+        "target": "name"
+      },
+      {
+        "id": 76,
+        "source": "https://www.reddit.com/r/doener/",
+        "target": "parent"
+      },
+      {
+        "id": 77,
+        "source": "https://www.reddit.com/r/doener/",
+        "target": "children"
+      },
+      {
+        "id": 78,
+        "source": "https://www.reddit.com/r/traa_de/",
+        "target": "name"
+      },
+      {
+        "id": 79,
+        "source": "https://www.reddit.com/r/traa_de/",
+        "target": "parent"
+      },
+      {
+        "id": 80,
+        "source": "https://www.reddit.com/r/traa_de/",
+        "target": "children"
+      },
+      {
+        "id": 81,
+        "source": "https://www.reddit.com/r/Angelfreunde/",
+        "target": "name"
+      },
+      {
+        "id": 82,
+        "source": "https://www.reddit.com/r/Angelfreunde/",
+        "target": "parent"
+      },
+      {
+        "id": 83,
+        "source": "https://www.reddit.com/r/Angelfreunde/",
+        "target": "children"
+      },
+      {
+        "id": 84,
+        "source": "https://www.reddit.com/r/EuropeEats/",
+        "target": "name"
+      },
+      {
+        "id": 85,
+        "source": "https://www.reddit.com/r/EuropeEats/",
+        "target": "parent"
+      },
+      {
+        "id": 86,
+        "source": "https://www.reddit.com/r/EuropeEats/",
+        "target": "children"
+      },
+      {
+        "id": 87,
+        "source": "https://www.reddit.com/r/homeautomation/",
+        "target": "name"
+      },
+      {
+        "id": 88,
+        "source": "https://www.reddit.com/r/homeautomation/",
+        "target": "parent"
+      },
+      {
+        "id": 89,
+        "source": "https://www.reddit.com/r/homeautomation/",
+        "target": "children"
+      },
+      {
+        "id": 90,
+        "source": "https://www.reddit.com/r/linuxadmin/",
+        "target": "name"
+      },
+      {
+        "id": 91,
+        "source": "https://www.reddit.com/r/linuxadmin/",
+        "target": "parent"
+      },
+      {
+        "id": 92,
+        "source": "https://www.reddit.com/r/linuxadmin/",
+        "target": "children"
+      },
+      {
+        "id": 93,
+        "source": "https://www.reddit.com/r/HomeNetworking/",
+        "target": "name"
+      },
+      {
+        "id": 94,
+        "source": "https://www.reddit.com/r/HomeNetworking/",
+        "target": "parent"
+      },
+      {
+        "id": 95,
+        "source": "https://www.reddit.com/r/HomeNetworking/",
+        "target": "children"
+      },
+      {
+        "id": 96,
+        "source": "https://www.reddit.com/r/buildapcsales/",
+        "target": "name"
+      },
+      {
+        "id": 97,
+        "source": "https://www.reddit.com/r/buildapcsales/",
+        "target": "parent"
+      },
+      {
+        "id": 98,
+        "source": "https://www.reddit.com/r/buildapcsales/",
+        "target": "children"
+      },
+      {
+        "id": 99,
+        "source": "https://www.reddit.com/r/ZeroWasteVegans/",
+        "target": "name"
+      },
+      {
+        "id": 100,
+        "source": "https://www.reddit.com/r/ZeroWasteVegans/",
+        "target": "parent"
+      },
+      {
+        "id": 101,
+        "source": "https://www.reddit.com/r/ZeroWasteVegans/",
+        "target": "children"
+      },
+      {
+        "id": 102,
+        "source": "https://www.reddit.com/r/PFSENSE/",
+        "target": "name"
+      },
+      {
+        "id": 103,
+        "source": "https://www.reddit.com/r/PFSENSE/",
+        "target": "parent"
+      },
+      {
+        "id": 104,
+        "source": "https://www.reddit.com/r/PFSENSE/",
+        "target": "children"
+      },
+      {
+        "id": 105,
+        "source": "https://www.reddit.com/r/MouseReview/",
+        "target": "name"
+      },
+      {
+        "id": 106,
+        "source": "https://www.reddit.com/r/MouseReview/",
+        "target": "parent"
+      },
+      {
+        "id": 107,
+        "source": "https://www.reddit.com/r/MouseReview/",
+        "target": "children"
+      },
+      {
+        "id": 108,
+        "source": "https://www.reddit.com/r/Iberofonia/",
+        "target": "name"
+      },
+      {
+        "id": 109,
+        "source": "https://www.reddit.com/r/Iberofonia/",
+        "target": "parent"
+      },
+      {
+        "id": 110,
+        "source": "https://www.reddit.com/r/Iberofonia/",
+        "target": "children"
+      },
+      {
+        "id": 111,
+        "source": "https://www.reddit.com/r/hardwareswap/",
+        "target": "name"
+      },
+      {
+        "id": 112,
+        "source": "https://www.reddit.com/r/hardwareswap/",
+        "target": "parent"
+      },
+      {
+        "id": 113,
+        "source": "https://www.reddit.com/r/hardwareswap/",
+        "target": "children"
+      },
+      {
+        "id": 114,
+        "source": "https://www.reddit.com/r/abitur/",
+        "target": "name"
+      },
+      {
+        "id": 115,
+        "source": "https://www.reddit.com/r/abitur/",
+        "target": "parent"
+      },
+      {
+        "id": 116,
+        "source": "https://www.reddit.com/r/abitur/",
+        "target": "children"
+      },
+      {
+        "id": 117,
+        "source": "https://www.reddit.com/r/Fernstudis/?f=flair_name%3A%22r%2FFernstudis%22",
+        "target": "name"
+      },
+      {
+        "id": 118,
+        "source": "https://www.reddit.com/r/Fernstudis/?f=flair_name%3A%22r%2FFernstudis%22",
+        "target": "parent"
+      },
+      {
+        "id": 119,
+        "source": "https://www.reddit.com/r/Fernstudis/?f=flair_name%3A%22r%2FFernstudis%22",
+        "target": "children"
+      },
+      {
+        "id": 120,
+        "source": "https://www.reddit.com/r/VeganBaking/",
+        "target": "name"
+      },
+      {
+        "id": 121,
+        "source": "https://www.reddit.com/r/VeganBaking/",
+        "target": "parent"
+      },
+      {
+        "id": 122,
+        "source": "https://www.reddit.com/r/VeganBaking/",
+        "target": "children"
+      },
+      {
+        "id": 123,
+        "source": "https://www.reddit.com/r/alarmdotcom/",
+        "target": "name"
+      },
+      {
+        "id": 124,
+        "source": "https://www.reddit.com/r/alarmdotcom/",
+        "target": "parent"
+      },
+      {
+        "id": 125,
+        "source": "https://www.reddit.com/r/alarmdotcom/",
+        "target": "children"
+      },
+      {
+        "id": 126,
+        "source": "https://www.reddit.com/r/olkb/",
+        "target": "name"
+      },
+      {
+        "id": 127,
+        "source": "https://www.reddit.com/r/olkb/",
+        "target": "parent"
+      },
+      {
+        "id": 128,
+        "source": "https://www.reddit.com/r/olkb/",
+        "target": "children"
+      },
+      {
+        "id": 129,
+        "source": "https://www.reddit.com/r/CustomKeyboards/",
+        "target": "name"
+      },
+      {
+        "id": 130,
+        "source": "https://www.reddit.com/r/CustomKeyboards/",
+        "target": "parent"
+      },
+      {
+        "id": 131,
+        "source": "https://www.reddit.com/r/CustomKeyboards/",
+        "target": "children"
+      },
+      {
+        "id": 132,
+        "source": "https://www.reddit.com/r/veganrecipes/",
+        "target": "name"
+      },
+      {
+        "id": 133,
+        "source": "https://www.reddit.com/r/veganrecipes/",
+        "target": "parent"
+      },
+      {
+        "id": 134,
+        "source": "https://www.reddit.com/r/veganrecipes/",
+        "target": "children"
+      },
+      {
+        "id": 135,
+        "source": "https://www.reddit.com/r/TpLink/",
+        "target": "name"
+      },
+      {
+        "id": 136,
+        "source": "https://www.reddit.com/r/TpLink/",
+        "target": "parent"
+      },
+      {
+        "id": 137,
+        "source": "https://www.reddit.com/r/TpLink/",
+        "target": "children"
+      },
+      {
+        "id": 138,
+        "source": "https://www.reddit.com/r/keycaps/",
+        "target": "name"
+      },
+      {
+        "id": 139,
+        "source": "https://www.reddit.com/r/keycaps/",
+        "target": "parent"
+      },
+      {
+        "id": 140,
+        "source": "https://www.reddit.com/r/keycaps/",
+        "target": "children"
+      },
+      {
+        "id": 141,
+        "source": "https://www.reddit.com/r/smarthome/",
+        "target": "name"
+      },
+      {
+        "id": 142,
+        "source": "https://www.reddit.com/r/smarthome/",
+        "target": "parent"
+      },
+      {
+        "id": 143,
+        "source": "https://www.reddit.com/r/smarthome/",
+        "target": "children"
+      },
+      {
+        "id": 144,
+        "source": "https://www.reddit.com/r/googlehome/",
+        "target": "name"
+      },
+      {
+        "id": 145,
+        "source": "https://www.reddit.com/r/googlehome/",
+        "target": "parent"
+      },
+      {
+        "id": 146,
+        "source": "https://www.reddit.com/r/googlehome/",
+        "target": "children"
+      },
+      {
+        "id": 147,
+        "source": "https://www.reddit.com/r/DIY/",
+        "target": "name"
+      },
+      {
+        "id": 148,
+        "source": "https://www.reddit.com/r/DIY/",
+        "target": "parent"
+      },
+      {
+        "id": 149,
+        "source": "https://www.reddit.com/r/DIY/",
+        "target": "children"
+      },
+      {
+        "id": 150,
+        "source": "https://www.reddit.com/r/msp/",
+        "target": "name"
+      },
+      {
+        "id": 151,
+        "source": "https://www.reddit.com/r/msp/",
+        "target": "parent"
+      },
+      {
+        "id": 152,
+        "source": "https://www.reddit.com/r/msp/",
+        "target": "children"
+      },
+      {
+        "id": 153,
+        "source": "https://www.reddit.com/r/CPTSD/",
+        "target": "name"
+      },
+      {
+        "id": 154,
+        "source": "https://www.reddit.com/r/CPTSD/",
+        "target": "parent"
+      },
+      {
+        "id": 155,
+        "source": "https://www.reddit.com/r/CPTSD/",
+        "target": "children"
+      },
+      {
+        "id": 156,
+        "source": "https://www.reddit.com/r/Netgate/",
+        "target": "name"
+      },
+      {
+        "id": 157,
+        "source": "https://www.reddit.com/r/Netgate/",
+        "target": "parent"
+      },
+      {
+        "id": 158,
+        "source": "https://www.reddit.com/r/Netgate/",
+        "target": "children"
+      },
+      {
+        "id": 159,
+        "source": "https://www.reddit.com/r/LatinAmerica/",
+        "target": "name"
+      },
+      {
+        "id": 160,
+        "source": "https://www.reddit.com/r/LatinAmerica/",
+        "target": "parent"
+      },
+      {
+        "id": 161,
+        "source": "https://www.reddit.com/r/LatinAmerica/",
+        "target": "children"
+      },
+      {
+        "id": 162,
+        "source": "https://www.reddit.com/r/keycapdesigners/",
+        "target": "name"
+      },
+      {
+        "id": 163,
+        "source": "https://www.reddit.com/r/keycapdesigners/",
+        "target": "parent"
+      },
+      {
+        "id": 164,
+        "source": "https://www.reddit.com/r/keycapdesigners/",
+        "target": "children"
+      },
+      {
+        "id": 165,
+        "source": "https://www.reddit.com/r/CanadianHardwareSwap/",
+        "target": "name"
+      },
+      {
+        "id": 166,
+        "source": "https://www.reddit.com/r/CanadianHardwareSwap/",
+        "target": "parent"
+      },
+      {
+        "id": 167,
+        "source": "https://www.reddit.com/r/CanadianHardwareSwap/",
+        "target": "children"
+      },
+      {
+        "id": 168,
+        "source": "https://www.reddit.com/r/amazonecho/",
+        "target": "name"
+      },
+      {
+        "id": 169,
+        "source": "https://www.reddit.com/r/amazonecho/",
+        "target": "parent"
+      },
+      {
+        "id": 170,
+        "source": "https://www.reddit.com/r/amazonecho/",
+        "target": "children"
+      },
+      {
+        "id": 171,
+        "source": "https://www.reddit.com/r/HardwareSwapEU/",
+        "target": "name"
+      },
+      {
+        "id": 172,
+        "source": "https://www.reddit.com/r/HardwareSwapEU/",
+        "target": "parent"
+      },
+      {
+        "id": 173,
+        "source": "https://www.reddit.com/r/HardwareSwapEU/",
+        "target": "children"
+      },
+      {
+        "id": 174,
+        "source": "https://www.reddit.com/r/Ring/",
+        "target": "name"
+      },
+      {
+        "id": 175,
+        "source": "https://www.reddit.com/r/Ring/",
+        "target": "parent"
+      },
+      {
+        "id": 176,
+        "source": "https://www.reddit.com/r/Ring/",
+        "target": "children"
+      },
+      {
+        "id": 177,
+        "source": "https://www.reddit.com/r/VivintSmartHome/",
+        "target": "name"
+      },
+      {
+        "id": 178,
+        "source": "https://www.reddit.com/r/VivintSmartHome/",
+        "target": "parent"
+      },
+      {
+        "id": 179,
+        "source": "https://www.reddit.com/r/VivintSmartHome/",
+        "target": "children"
+      },
+      {
+        "id": 180,
+        "source": "https://www.reddit.com/r/VeganActivism/",
+        "target": "name"
+      },
+      {
+        "id": 181,
+        "source": "https://www.reddit.com/r/VeganActivism/",
+        "target": "parent"
+      },
+      {
+        "id": 182,
+        "source": "https://www.reddit.com/r/VeganActivism/",
+        "target": "children"
+      },
+      {
+        "id": 183,
+        "source": "https://www.reddit.com/r/Nest/",
+        "target": "name"
+      },
+      {
+        "id": 184,
+        "source": "https://www.reddit.com/r/Nest/",
+        "target": "parent"
+      },
+      {
+        "id": 185,
+        "source": "https://www.reddit.com/r/Nest/",
+        "target": "children"
+      },
+      {
+        "id": 186,
+        "source": "https://www.reddit.com/r/diysecurity/",
+        "target": "name"
+      },
+      {
+        "id": 187,
+        "source": "https://www.reddit.com/r/diysecurity/",
+        "target": "parent"
+      },
+      {
+        "id": 188,
+        "source": "https://www.reddit.com/r/diysecurity/",
+        "target": "children"
+      },
+      {
+        "id": 189,
+        "source": "https://www.reddit.com/r/pcmasterrace/",
+        "target": "name"
+      },
+      {
+        "id": 190,
+        "source": "https://www.reddit.com/r/pcmasterrace/",
+        "target": "parent"
+      },
+      {
+        "id": 191,
+        "source": "https://www.reddit.com/r/pcmasterrace/",
+        "target": "children"
+      },
+      {
+        "id": 192,
+        "source": "https://www.reddit.com/r/InternalFamilySystems/",
+        "target": "name"
+      },
+      {
+        "id": 193,
+        "source": "https://www.reddit.com/r/InternalFamilySystems/",
+        "target": "parent"
+      },
+      {
+        "id": 194,
+        "source": "https://www.reddit.com/r/InternalFamilySystems/",
+        "target": "children"
+      },
+      {
+        "id": 195,
+        "source": "https://www.reddit.com/r/homesecurity/",
+        "target": "name"
+      },
+      {
+        "id": 196,
+        "source": "https://www.reddit.com/r/homesecurity/",
+        "target": "parent"
+      },
+      {
+        "id": 197,
+        "source": "https://www.reddit.com/r/homesecurity/",
+        "target": "children"
+      },
+      {
+        "id": 198,
+        "source": "https://www.reddit.com/r/fixit/",
+        "target": "name"
+      },
+      {
+        "id": 199,
+        "source": "https://www.reddit.com/r/fixit/",
+        "target": "parent"
+      },
+      {
+        "id": 200,
+        "source": "https://www.reddit.com/r/fixit/",
+        "target": "children"
+      },
+      {
+        "id": 201,
+        "source": "https://www.reddit.com/r/SuicideWatch/",
+        "target": "name"
+      },
+      {
+        "id": 202,
+        "source": "https://www.reddit.com/r/SuicideWatch/",
+        "target": "parent"
+      },
+      {
+        "id": 203,
+        "source": "https://www.reddit.com/r/SuicideWatch/",
+        "target": "children"
+      },
+      {
+        "id": 204,
+        "source": "https://www.reddit.com/r/simplisafe/",
+        "target": "name"
+      },
+      {
+        "id": 205,
+        "source": "https://www.reddit.com/r/simplisafe/",
+        "target": "parent"
+      },
+      {
+        "id": 206,
+        "source": "https://www.reddit.com/r/simplisafe/",
+        "target": "children"
+      },
+      {
+        "id": 207,
+        "source": "https://www.reddit.com/r/PanAmerica/",
+        "target": "name"
+      },
+      {
+        "id": 208,
+        "source": "https://www.reddit.com/r/PanAmerica/",
+        "target": "parent"
+      },
+      {
+        "id": 209,
+        "source": "https://www.reddit.com/r/PanAmerica/",
+        "target": "children"
+      },
+      {
+        "id": 210,
+        "source": "https://www.reddit.com/r/Desahogo/",
+        "target": "name"
+      },
+      {
+        "id": 211,
+        "source": "https://www.reddit.com/r/Desahogo/",
+        "target": "parent"
+      },
+      {
+        "id": 212,
+        "source": "https://www.reddit.com/r/Desahogo/",
+        "target": "children"
+      },
+      {
+        "id": 213,
+        "source": "https://www.reddit.com/r/winkhub/",
+        "target": "name"
+      },
+      {
+        "id": 214,
+        "source": "https://www.reddit.com/r/winkhub/",
+        "target": "parent"
+      },
+      {
+        "id": 215,
+        "source": "https://www.reddit.com/r/winkhub/",
+        "target": "children"
+      },
+      {
+        "id": 216,
+        "source": "https://www.reddit.com/r/SmartThings/",
+        "target": "name"
+      },
+      {
+        "id": 217,
+        "source": "https://www.reddit.com/r/SmartThings/",
+        "target": "parent"
+      },
+      {
+        "id": 218,
+        "source": "https://www.reddit.com/r/SmartThings/",
+        "target": "children"
+      },
+      {
+        "id": 219,
+        "source": "https://www.reddit.com/r/ifttt/",
+        "target": "name"
+      },
+      {
+        "id": 220,
+        "source": "https://www.reddit.com/r/ifttt/",
+        "target": "parent"
+      },
+      {
+        "id": 221,
+        "source": "https://www.reddit.com/r/ifttt/",
+        "target": "children"
+      },
+      {
+        "id": 222,
+        "source": "https://www.reddit.com/r/ErgoMechKeyboards/",
+        "target": "name"
+      },
+      {
+        "id": 223,
+        "source": "https://www.reddit.com/r/ErgoMechKeyboards/",
+        "target": "parent"
+      },
+      {
+        "id": 224,
+        "source": "https://www.reddit.com/r/ErgoMechKeyboards/",
+        "target": "children"
+      },
+      {
+        "id": 225,
+        "source": "https://www.reddit.com/r/DankLatAm/",
+        "target": "name"
+      },
+      {
+        "id": 226,
+        "source": "https://www.reddit.com/r/DankLatAm/",
+        "target": "parent"
+      },
+      {
+        "id": 227,
+        "source": "https://www.reddit.com/r/DankLatAm/",
+        "target": "children"
+      },
+      {
+        "id": 228,
+        "source": "https://www.reddit.com/r/finishing/",
+        "target": "name"
+      },
+      {
+        "id": 229,
+        "source": "https://www.reddit.com/r/finishing/",
+        "target": "parent"
+      },
+      {
+        "id": 230,
+        "source": "https://www.reddit.com/r/finishing/",
+        "target": "children"
+      },
+      {
+        "id": 231,
+        "source": "https://www.reddit.com/r/melomanos/",
+        "target": "name"
+      },
+      {
+        "id": 232,
+        "source": "https://www.reddit.com/r/melomanos/",
+        "target": "parent"
+      },
+      {
+        "id": 233,
+        "source": "https://www.reddit.com/r/melomanos/",
+        "target": "children"
+      },
+      {
+        "id": 234,
+        "source": "https://www.reddit.com/r/AmazonEchoDev/",
+        "target": "name"
+      },
+      {
+        "id": 235,
+        "source": "https://www.reddit.com/r/AmazonEchoDev/",
+        "target": "parent"
+      },
+      {
+        "id": 236,
+        "source": "https://www.reddit.com/r/AmazonEchoDev/",
+        "target": "children"
+      },
+      {
+        "id": 237,
+        "source": "https://www.reddit.com/r/rapecounseling/",
+        "target": "name"
+      },
+      {
+        "id": 238,
+        "source": "https://www.reddit.com/r/rapecounseling/",
+        "target": "parent"
+      },
+      {
+        "id": 239,
+        "source": "https://www.reddit.com/r/rapecounseling/",
+        "target": "children"
+      },
+      {
+        "id": 240,
+        "source": "https://www.reddit.com/r/asklatinamerica/",
+        "target": "name"
+      },
+      {
+        "id": 241,
+        "source": "https://www.reddit.com/r/asklatinamerica/",
+        "target": "parent"
+      },
+      {
+        "id": 242,
+        "source": "https://www.reddit.com/r/asklatinamerica/",
+        "target": "children"
+      },
+      {
+        "id": 243,
+        "source": "https://www.reddit.com/r/centralamerica/",
+        "target": "name"
+      },
+      {
+        "id": 244,
+        "source": "https://www.reddit.com/r/centralamerica/",
+        "target": "parent"
+      },
+      {
+        "id": 245,
+        "source": "https://www.reddit.com/r/centralamerica/",
+        "target": "children"
+      },
+      {
+        "id": 246,
+        "source": "https://www.reddit.com/r/Alexa_Skills/",
+        "target": "name"
+      },
+      {
+        "id": 247,
+        "source": "https://www.reddit.com/r/Alexa_Skills/",
+        "target": "parent"
+      },
+      {
+        "id": 248,
+        "source": "https://www.reddit.com/r/Alexa_Skills/",
+        "target": "children"
+      },
+      {
+        "id": 249,
+        "source": "https://www.reddit.com/r/saintmaarten/",
+        "target": "name"
+      },
+      {
+        "id": 250,
+        "source": "https://www.reddit.com/r/saintmaarten/",
+        "target": "parent"
+      },
+      {
+        "id": 251,
+        "source": "https://www.reddit.com/r/saintmaarten/",
+        "target": "children"
+      },
+      {
+        "id": 252,
+        "source": "https://www.reddit.com/r/AskTheCaribbean/",
+        "target": "name"
+      },
+      {
+        "id": 253,
+        "source": "https://www.reddit.com/r/AskTheCaribbean/",
+        "target": "parent"
+      },
+      {
+        "id": 254,
+        "source": "https://www.reddit.com/r/AskTheCaribbean/",
+        "target": "children"
+      },
+      {
+        "id": 255,
+        "source": "https://www.reddit.com/r/brasilivre/",
+        "target": "name"
+      },
+      {
+        "id": 256,
+        "source": "https://www.reddit.com/r/brasilivre/",
+        "target": "parent"
+      },
+      {
+        "id": 257,
+        "source": "https://www.reddit.com/r/brasilivre/",
+        "target": "children"
+      },
+      {
+        "id": 258,
+        "source": "https://www.reddit.com/r/emotionalneglect/",
+        "target": "name"
+      },
+      {
+        "id": 259,
+        "source": "https://www.reddit.com/r/emotionalneglect/",
+        "target": "parent"
+      },
+      {
+        "id": 260,
+        "source": "https://www.reddit.com/r/emotionalneglect/",
+        "target": "children"
+      },
+      {
+        "id": 261,
+        "source": "https://www.reddit.com/r/notArgentina/",
+        "target": "name"
+      },
+      {
+        "id": 262,
+        "source": "https://www.reddit.com/r/notArgentina/",
+        "target": "parent"
+      },
+      {
+        "id": 263,
+        "source": "https://www.reddit.com/r/notArgentina/",
+        "target": "children"
+      },
+      {
+        "id": 264,
+        "source": "https://www.reddit.com/r/Argaming/",
+        "target": "name"
+      },
+      {
+        "id": 265,
+        "source": "https://www.reddit.com/r/Argaming/",
+        "target": "parent"
+      },
+      {
+        "id": 266,
+        "source": "https://www.reddit.com/r/Argaming/",
+        "target": "children"
+      },
+      {
+        "id": 267,
+        "source": "https://www.reddit.com/r/RepArgentina/",
+        "target": "name"
+      },
+      {
+        "id": 268,
+        "source": "https://www.reddit.com/r/RepArgentina/",
+        "target": "parent"
+      },
+      {
+        "id": 269,
+        "source": "https://www.reddit.com/r/RepArgentina/",
+        "target": "children"
+      },
+      {
+        "id": 270,
+        "source": "https://www.reddit.com/r/UBA/",
+        "target": "name"
+      },
+      {
+        "id": 271,
+        "source": "https://www.reddit.com/r/UBA/",
+        "target": "parent"
+      },
+      {
+        "id": 272,
+        "source": "https://www.reddit.com/r/UBA/",
+        "target": "children"
+      },
+      {
+        "id": 273,
+        "source": "https://www.reddit.com/r/Guadeloupe/",
+        "target": "name"
+      },
+      {
+        "id": 274,
+        "source": "https://www.reddit.com/r/Guadeloupe/",
+        "target": "parent"
+      },
+      {
+        "id": 275,
+        "source": "https://www.reddit.com/r/Guadeloupe/",
+        "target": "children"
+      },
+      {
+        "id": 276,
+        "source": "https://www.reddit.com/r/empleos_AR/",
+        "target": "name"
+      },
+      {
+        "id": 277,
+        "source": "https://www.reddit.com/r/empleos_AR/",
+        "target": "parent"
+      },
+      {
+        "id": 278,
+        "source": "https://www.reddit.com/r/empleos_AR/",
+        "target": "children"
+      },
+      {
+        "id": 279,
+        "source": "https://www.reddit.com/r/AlexaDevs/",
+        "target": "name"
+      },
+      {
+        "id": 280,
+        "source": "https://www.reddit.com/r/AlexaDevs/",
+        "target": "parent"
+      },
+      {
+        "id": 281,
+        "source": "https://www.reddit.com/r/AlexaDevs/",
+        "target": "children"
+      },
+      {
+        "id": 282,
+        "source": "https://www.reddit.com/r/dankgentina/",
+        "target": "name"
+      },
+      {
+        "id": 283,
+        "source": "https://www.reddit.com/r/dankgentina/",
+        "target": "parent"
+      },
+      {
+        "id": 284,
+        "source": "https://www.reddit.com/r/dankgentina/",
+        "target": "children"
+      },
+      {
+        "id": 285,
+        "source": "https://www.reddit.com/r/memexico/",
+        "target": "name"
+      },
+      {
+        "id": 286,
+        "source": "https://www.reddit.com/r/memexico/",
+        "target": "parent"
+      },
+      {
+        "id": 287,
+        "source": "https://www.reddit.com/r/memexico/",
+        "target": "children"
+      }
+    ]
+  }
+
+  s = new sigma.constructor({
+    graph: data,
+    container: document.querySelector("#container"),
+  });
+
+  const layout = graphologyLibrary.FA2Layout(s);
+  layout.start();
+</script>
+
+</html>
