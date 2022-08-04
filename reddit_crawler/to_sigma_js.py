@@ -7,14 +7,21 @@ with open('reddit.json') as f:
     json_data = json.load(f)
 
 sigma_data = {'nodes': [], 'edges': []}
+node_names = set()
 
 counter = 0
 
 for subreddit in json_data:
-    sigma_data['nodes'].append({'id': subreddit['name'], 'label': subreddit['name'], 'x': randrange(10), 'y': randrange(10), 'size': 5})
-    for child in subreddit:
-        sigma_data['edges'].append({'id': counter, 'source': subreddit['name'], 'target': child})
-        counter += 1
+    node_names.add(subreddit['name'])
 
-with open('reddit_sigma.json', 'w') as f:
+    for child in subreddit['children']:
+        sigma_data['edges'].append({'source': subreddit['name'], 'target': child})
+        node_names.add(child)
+
+
+for node in node_names:
+    sigma_data['nodes'].append({'id': node, 'label': node, 'size': 5})
+
+
+with open('../reddit_graph/public/reddit_sigma.json', 'w') as f:
     json.dump(sigma_data, f, indent=4)
