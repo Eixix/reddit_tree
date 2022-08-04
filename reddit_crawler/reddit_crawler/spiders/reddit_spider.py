@@ -2,30 +2,24 @@ from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 
 class redditSpider(CrawlSpider):
-    name = "redditSpider"
+    name = "reddit"
 
     start_urls = [
         'https://www.reddit.com/r/de/',
     ]
 
     rules = (
-        Rule(LinkExtractor(restrict_text=r"^r\/\S+$"), follow=False),
+        Rule(LinkExtractor(restrict_text=r"^r/\S+$"), follow=True, callback='parse_item'),
     )
 
     def parse_item(self, response):
-        yield {
-            'name': "Test",
-            'item': response.url
+
+        to_return = {
+            'name': response.url,
+            'parent': response.request.headers['referer'].decode('utf-8'),
+            'children': list(map(lambda x: x.url, LinkExtractor(restrict_text=r"^r/\S+$").extract_links(response)))
         }
-        # links = LinkExtractor(restrict_text=r"^r\/\S+$").extract_links(response)
 
-        # scrapes = []
-        # for link in links:
-        #     item = {}
-        #     item['name'] = link
-        #     item['parent'] = response.url
-        #     scrapes.append(item)
-
-        # return scrapes
+        return to_return
 
         
