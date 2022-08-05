@@ -1,6 +1,6 @@
 import Sigma from "sigma";
 import Graph from "graphology";
-import ForceSupervisor from "graphology-layout-force/worker";
+import FA2Layout from 'graphology-layout-forceatlas2/worker';
 
 
 fetch('/reddit_sigma.json')
@@ -10,10 +10,9 @@ fetch('/reddit_sigma.json')
 
         const graph = new Graph();
 
-        data.nodes.forEach(node => graph.addNode(node.id))
+        data.nodes.forEach(node => graph.addNode(node.id, {label: node.label}))
         data.edges.forEach(edge => graph.addEdge(edge.source, edge.target))
 
-        console.log(graph);
 
         graph.nodes().forEach((node, i) => {
             const angle = (i * 2 * Math.PI) / graph.order;
@@ -21,17 +20,20 @@ fetch('/reddit_sigma.json')
             graph.setNodeAttribute(node, "y", 100 * Math.sin(angle));
         });
 
-        const renderer = new Sigma(graph,
-            container);
+        const renderer = new Sigma(graph, container);
 
-        const layout = new ForceSupervisor(graph)
+
+        const layout = new FA2Layout(graph, {
+            iterations: 50,
+            settings: {
+                adjustSizes: true,
+                gravity: 100,
+                barnesHutOptimize: true
+            },
+        })
+
         layout.start()
 
+        setTimeout(() => layout.kill(), 100000)
 
-        // const layout = new FA2Layout(graph, {
-        //     settings: {gravity: 1},
-        //     getEdgeWeight: 'weight'
-        // })
-
-        // layout.start()
     });
