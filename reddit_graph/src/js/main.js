@@ -10,7 +10,9 @@ fetch('/reddit_sigma.json')
 
         const graph = new Graph();
 
-        data.nodes.forEach(node => graph.addNode(node.id, {label: node.label}))
+        const maxSize = data.nodes.map((node) => node.size).reduce((prev, cur) => prev < cur ? cur : prev)
+
+        data.nodes.forEach(node => graph.addNode(node.id, {label: node.label, size: Math.max(5, (node.size / maxSize) * 40)}))
         data.edges.forEach(edge => graph.addEdge(edge.source, edge.target))
 
 
@@ -27,13 +29,13 @@ fetch('/reddit_sigma.json')
             iterations: 50,
             settings: {
                 adjustSizes: true,
-                gravity: 100,
+                gravity: 10,
                 barnesHutOptimize: true
             },
         })
 
         layout.start()
 
-        setTimeout(() => layout.kill(), 100000)
+        setTimeout(() => layout.kill(), 30000)
 
     });
