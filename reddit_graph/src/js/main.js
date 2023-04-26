@@ -13,7 +13,7 @@ fetch('/reddit_sigma.json')
 
     const maxSize = data.nodes.map((node) => node.size).reduce((prev, cur) => prev < cur ? cur : prev)
 
-    data.nodes.forEach(node => graph.addNode(node.id, { label: node.label, size: Math.max(5, (node.size / maxSize) * 40) }))
+    data.nodes.forEach(node => graph.addNode(node.id, { label: node.label, size: Math.max(5, (node.size / maxSize) * 30) }))
     data.edges.forEach(edge => graph.addEdge(edge.source, edge.target))
 
     const graphModularity = louvain.detailed(graph)
@@ -23,9 +23,9 @@ fetch('/reddit_sigma.json')
 
     graph.nodes().forEach((node, i) => {
       const angle = (i * 2 * Math.PI) / graph.order;
-      const community = graph.getAttribute(node, "community")
-      graph.setNodeAttribute(node, "color", colors[community])
-      graph.setNodeAttribute(node, "x", graphModularity.communities[node]);
+      //const community = graph.getAttribute(node, "community")
+      //graph.setNodeAttribute(node, "color", colors[community])
+      graph.setNodeAttribute(node, "x", graphModularity.communities[node] + 100 * Math.cos(angle));
       graph.setNodeAttribute(node, "y", 100 * Math.sin(angle));
     });
 
